@@ -1,3 +1,23 @@
+class Book:
+    """Represents a book with a title, author, and checkout status."""
+
+    def __init__(self, title, author):
+        self.title = title            # public variable: anyone can access this
+        self.author = author          # public variable: anyone can access this
+        self._is_checked_out = False  # private variable (starts off as not checked out)
+
+    def check_out(self):
+        """Mark this book as checked out."""
+        self._is_checked_out = True
+
+    def return_book(self):
+        """Mark this book as available (not checked out)."""
+        self._is_checked_out = False
+
+    def is_available(self):
+        """Check if the book is available to be checked out."""
+        return not self._is_checked_out
+    
 class Library:
     """Represents a library that can store and manage books."""
 
@@ -38,3 +58,4 @@ class Library:
         else:
             for book in available_books:
                 print(f"{book.title} by {book.author}")
+
