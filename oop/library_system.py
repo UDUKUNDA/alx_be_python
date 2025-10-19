@@ -30,7 +30,7 @@ class PrintBook(Book):
 
 class Library:
     def __init__(self) -> None:
-        self.books: List[Book] = []
+        self.books = []
 
     def add_book(self, book: Book) -> None:
         if not isinstance(book, Book):
